@@ -1,0 +1,23 @@
+test.html
+
+<script type="text/javascript">
+	$("creatBook-submit-button").click(function()
+	{
+
+var books =
+  {
+  	id: $("isbn").val()+Date.now(),
+  	owner: currentUser.uid;
+    isbn: $("#isbn").val(),
+    title: $("#title").val(),
+    author: $("#author").val(),
+    price:  $("#price").val(),
+    edition: $("#edition").val(),
+    year: $("#year").val(),
+    condition: $("condition").val()
+}
+addBoook(books);
+});
+		function addBook(b){}
+		firebase.database().ref("books/"+ books.id).set(books);
+</script>

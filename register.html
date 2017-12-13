@@ -1,0 +1,190 @@
+<!--this is where we should use firebase connection-->
+<!--<?php
+//session_start();
+?>-->
+
+
+
+
+<!DOCTYPE html>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script>
+	<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.0.2/firebase.js">
+  </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+    <script>
+
+ /* // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAKAvtSqE25LzqCWv4PzPlHuC9a-UadF7U",
+    authDomain: "studyswapwebsite.firebaseapp.com",
+    databaseURL: "https://studyswapwebsite.firebaseio.com",
+    projectId: "studyswapwebsite",
+    storageBucket: "studyswapwebsite.appspot.com",
+    messagingSenderId: "271728404472"
+  };
+  firebase.initializeApp(config);*/
+</script>
+
+
+<html lang="en">
+    <head> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+
+		<!-- Website CSS style -->
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+
+		<!-- Website Font style -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+		<!-- Custom styles for this template -->
+    	<link href="../css/register.css" rel="stylesheet">
+    	<link href="../css/carousel.css" rel="stylesheet">
+
+    	<link rel="icon" href="../favicon.ico">
+
+		<title>Register page</title>
+	</head>
+<body>
+
+<!-- NAVBAR -->
+    <div class="navbar-wrapper">
+      <div class="container">
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Student Book Marketplace</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="/web/swapChat.html">SwapChat</a></li>
+                <li><a href="buyTextBooks.html">Buy Textbooks</a></li>
+                <li><a href="sellTextBooks.html">Sell Textbooks</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
+                <li><a href="contactUs.html">Contact Us</a></li>
+                <li><a href="safety.html">Safety Precautions</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- END OF NAVBAR -->
+
+		<div class="container">
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title">Registration</h1>
+	               		<hr />
+	               	</div>
+	            </div> 
+				<div class="main-login main-center">
+					<form action="" class="form">
+						<div class="form-group">
+							<label for="email" class="cols-sm-2 control-label">Your Email</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email" required/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Username</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username" required/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password" required/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="confirmPassword" id="confirm"  placeholder="Confirm your Password" required/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group ">
+							<!--<button type="submit" class="btn btn-primary btn-lg btn-block login-button">Register</button>-->
+							<button class="submit btn btn-lg btn-primary btn-block" type="submit" id="btnRegister">Register</button>
+						</div>
+						<div class="login-register">
+				            <a href="../index.html">Login</a>
+				         </div>
+					</form>
+				</div>
+			</div>
+		</div>
+	
+
+<script src="https://www.gstatic.com/firebasejs/3.0.2/firebase.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+
+    <script>
+    	
+   $.fn.getFormData = function() {
+      var fields1 = this.find('[name]');
+      var result = {};
+      $.each(fields1, function (i, el)
+       {
+        result[el.name] = el.value;
+      });
+      return result;
+    };
+      var config = {
+    apiKey: "AIzaSyAKAvtSqE25LzqCWv4PzPlHuC9a-UadF7U",
+    authDomain: "studyswapwebsite.firebaseapp.com",
+    databaseURL: "https://studyswapwebsite.firebaseio.com",
+    projectId: "studyswapwebsite",
+    storageBucket: "studyswapwebsite.appspot.com",
+    messagingSenderId: "271728404472"
+  };
+      var fb = firebase.initializeApp(config);
+      var user_id;
+      $('.submit').on('click', function (e) {
+        e.preventDefault();
+        var updates = {};
+        user_id = user_id ? user_id : fb.database().ref().child('usersInfo').push().key;
+        updates[user_id] = $('form').getFormData();
+        fb.database().ref().child('usersInfo').update(updates);
+      });
+</script>
+</body>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <!--<script src="../../assets/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+</html>

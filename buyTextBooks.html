@@ -1,0 +1,250 @@
+<!--this is where we should use firebase connection-->
+
+
+<!DOCTYPE html>
+
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script>
+/*  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAKAvtSqE25LzqCWv4PzPlHuC9a-UadF7U",
+    authDomain: "studyswapwebsite.firebaseapp.com",
+    databaseURL: "https://studyswapwebsite.firebaseio.com",
+    projectId: "studyswapwebsite",
+    storageBucket: "studyswapwebsite.appspot.com",
+    messagingSenderId: "271728404472"
+  };
+  firebase.initializeApp(config);*/
+</script>
+
+
+<html>
+    <head>
+        <link rel="icon" href="../favicon.ico">
+        <title>Buy a Book</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/buyTextBooks.css" rel="stylesheet">
+        <link href="../css/contactus.css" rel="stylesheet">
+        <link href="../css/carousel.css" rel="stylesheet">
+
+        <!-- trying to link javascript for it to work-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+<!-- NAVBAR -->
+    <div class="navbar-wrapper">
+      <div class="container">
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Student Book Marketplace</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+
+
+
+
+                <li><a href="/web/swapChat.html">SwapChat</a></li>
+
+
+
+
+               <li class="active"><a href="buyTextBooks.html">Buy Textbooks</a></li>
+               <li><a href="sellTextBooks.html">Sell Textbooks</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
+                <li><a href="contactUs.html">Contact Us</a></li>
+                <li><a href="safety.html">Safety Precautions</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                 <!-- <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
+                  { 
+                    //echo '<li><a href="logout.html"> Log out </a></li>';
+                  ?>-->
+                  
+                    <li><a href="logout.html"> Logout </a></li>
+                  <!--<?php
+                  }
+                  else
+                  {
+                    echo '<li><a href="signIn.html"> Login </a></li>';
+                  }
+                  ?> -->     
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- END OF NAVBAR -->
+
+    <div class="container" style="margin-top: 105px;">
+        <div class="row">
+
+            <div class="col-lg-12">
+            <form class="form-signin" method="post" action="buyTextBooks.html">
+                <div class="searchBuyWrap">
+                    <h1>
+                        <center>Search for Textbooks!</center>
+                    </h1>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                          <label for="usr">Title:</label>
+                          <input type="text" class="form-control" id="usr" name="title">
+                        </div>
+                        <div class="form-group">
+                          <label for="usr">Author:</label>
+                          <input type="text" class="form-control" id="usr" name="author">
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                          <label for="usr">Year:</label>
+                          <input type="text" class="form-control" id="usr" name="year">
+                        </div>
+                        <div class="form-group">
+                          <label for="usr">Edition:</label>
+                          <input type="text" class="form-control" id="usr" name="edition">
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                          <label for="usr">ISBN:</label>
+                          <input type="text" class="form-control" id="usr" name="isbn">
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+              </form>
+            </div>
+
+        </div>
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+        <div class="container">
+            <div class="row">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>
+                            Textbooks Currently For Sale 
+                        </h4>
+                    </div>
+                    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+   
+    apiKey: "AIzaSyAKAvtSqE25LzqCWv4PzPlHuC9a-UadF7U",
+    authDomain: "studyswapwebsite.firebaseapp.com",
+    databaseURL: "https://studyswapwebsite.firebaseio.com",
+    projectId: "studyswapwebsite",
+    storageBucket: "studyswapwebsite.appspot.com",
+    messagingSenderId: "271728404472"
+
+  };
+  firebase.initializeApp(config);
+</script>
+
+<head>
+    <title>Books</title>
+    </head>
+<table style="width:80%;" id="ex-table">
+  <tr id="tr">
+    <th>author:</th>
+    <th>condition:</th> 
+    <th>edition:</th>
+    <th>isbn:</th>
+    <th>price:</th>
+    <th>title:</th>
+     <th>year:</th>
+ </table> 
+
+<script>
+    var database = firebase.database();
+    var user_id
+    database.ref().child("/books").once('value', function(snapshot)
+    {
+
+        if(snapshot.exists())
+        {
+            var content = '';
+            snapshot.forEach(function(data)
+            {
+                var val = data.val();
+                content +='<tr>';
+                content += '<td>' + val.author + '</td>';
+                content += '<td>' + val.condition + '</td>';
+                content += '<td>' + val.isbn + '</td>';
+                content += '<td>' + val.edition + '</td>';
+                content += '<td>' + val.price + '</td>';
+                content += '<td>' + val.title + '</td>';
+                content += '<td>' + val.year + '</td>';
+                content += '</tr>';
+            });
+            $('#ex-table').append(content);
+        }
+    });
+</script>
+
+<script>
+//firebase script should be here
+
+
+</script>
+
+</body>
+</html>
+
+
+
+<!--THIS IS THE CODE THAT WILL LEAD TO SELECTED ISBN DATAT-->
+            <!-- gets isbn from row clicked-->
+            <script type="text/javascript">
+            var table = document.getElementsByTagName("table")[0];
+            var tbody = table.getElementsByTagName("tbody")[0];
+            tbody.onclick = function (e) {
+                e = e || window.event;
+                var data = [];
+                var target = e.srcElement || e.target;
+                while (target && target.nodeName !== "TR") {
+                    target = target.parentNode;
+                }
+                if (target) {
+                    var cells = target.getElementsByTagName("td");
+                    for (var i = 0; i < cells.length; i++) {
+                        data.push(cells[i].innerHTML);
+                    }
+                }
+                //alert(cells[2].innerHTML);
+                document.myform3.formvar.value = cells[2].innerHTML;
+                document.getElementById('isbnForm').submit();
+            };
+            </script>
+
+          <form name="myform3" id="isbnForm" method="post" action="selectedBook.html">
+            <input type="hidden" name="formvar" value="" />
+          </form>
+
+    </body>
+</html>

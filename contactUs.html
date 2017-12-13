@@ -1,0 +1,179 @@
+<!--this is where we should use firebase connection-->
+<!--<?php
+//session_start();
+?>-->
+
+
+
+
+<!DOCTYPE html>
+
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.0.2/firebase.js">
+  </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../favicon.ico">
+
+        <title>Contact Us</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+        <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+        <!-- Custom styles for this template -->
+        <link href="../css/contactus.css" rel="stylesheet">
+        <link href="../css/carousel.css" rel="stylesheet">
+  </head>
+  <body>
+<!-- NAVBAR -->
+    <div class="navbar-wrapper">
+      <div class="container">
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Student Book Marketplace</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="/web/swapChat.html">SwapChat</a></li>
+                <li><a href="buyTextBooks.html">Buy Textbooks</a></li>
+                <li><a href="sellTextBooks.html">Sell Textbooks</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
+                <li class="active"><a href="contactUs.html">Contact Us</a></li>
+                <li><a href="safety.html">Safety Precautions</a></li>
+                <li><a href="logout.html"> Logout </a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- END OF NAVBAR -->
+
+
+<div class="container" id="contactSnippet">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="well well-sm">
+                <!--<form method="post" action="emailAction.html">-->
+                <form action="" class="form">
+                  <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Name</label>
+                            <input type="text" class="form-control" id="name" name="name"placeholder="Enter name" required="required" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required="required" /></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">
+                                Subject</label>
+                            <select id="subject" name="subject" class="form-control" required="required">
+                                <option value="na" selected="">Choose One:</option>
+                                <option value="service">General Customer Service</option>
+                                <option value="suggestions">Suggestions</option>
+                                <option value="product">Product Support</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Message</label>
+                            <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                                placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="submit btn-primary pull-right" id="btnContactUs">
+                            Send Message</button>
+                    </div>
+                  </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <form>
+            <legend><span class="glyphicon glyphicon-globe"></span> Our office</legend>
+            <address>
+                <strong>Quintet Engineering</strong><br>
+                Henson Hall, Room 111<br>
+                Salisbury, MD 21804<br>
+            </address>
+            <address>
+                <strong>COSC 426</strong><br>
+                studentBookMarketplace@gmail.com<br>
+                adminCOSC426@studyswap.kayako.com
+            </address>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/3.0.2/firebase.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+
+    <script>
+    	
+   $.fn.getFormData = function() {
+      var fields1 = this.find('[name]');
+      var result = {};
+      $.each(fields1, function (i, el)
+       {
+        result[el.name] = el.value;
+      });
+      return result;
+    };
+      var config = {
+    apiKey: "AIzaSyAKAvtSqE25LzqCWv4PzPlHuC9a-UadF7U",
+    authDomain: "studyswapwebsite.firebaseapp.com",
+    databaseURL: "https://studyswapwebsite.firebaseio.com",
+    projectId: "studyswapwebsite",
+    storageBucket: "studyswapwebsite.appspot.com",
+    messagingSenderId: "271728404472"
+  };
+      var fb = firebase.initializeApp(config);
+      var user_id;
+      $('.submit').on('click', function (e) {
+        e.preventDefault();
+        var updates = {};
+        user_id = user_id ? user_id : fb.database().ref().child('contactInfo').push().key;
+        updates[user_id] = $('form').getFormData();
+        fb.database().ref().child('contactInfo').update(updates);
+      });
+</script>
+
+
+
+<script type="text/javascript">!function(a,b){function c(){var b=a.createElement("iframe");return b.id="kayako-messenger-frame",b.style.border="none",b.style.width="100%",b.style.height="100%",b}function d(){var c=a.createElement("script");return c.async=!0,c.type="text/javascript",c.src=b._settings.messengerUrl,c.crossOrigin="anonymous",c}function e(){var b=a.createElement("div");return b.id="kayako-messenger",b.style.position="fixed",b.style.right=0,b.style.bottom=0,b.style.width=0,b.style.height=0,b}window.kayako=b,b.readyQueue=[],b.ready=function(a){b.readyQueue.push(a)},b._settings={apiUrl:"https://studyswap.kayako.com/api/v1",teamName:"StudySwap",homeTitles:[{"locale":"en-us","translation":"Hello! 👋"}],homeSubtitles:[{"locale":"en-us","translation":"Welcome to StudySwap. Let's chat — start a new conversation below."}],messengerUrl:"https://studyswap.kayakocdn.com/messenger",realtimeUrl:"wss://kre.kayako.net/socket",widgets:{presence:{enabled:true},twitter:{enabled:false,twitterHandle:"null"},articles:{enabled:false,sectionId:null}},styles:{primaryColor:"#437ba6",homeBackground:"-134deg, #0DDFA9 0%, #5AC8FA 100%",homePattern:"https://assets.kayako.com/messenger/pattern-1.svg",homeTextColor:"#2D3138"}};var f=a.body.getElementsByTagName("script")[0],g=c(),h=e();f.parentNode.insertBefore(h,f),h.appendChild(g,f),g.contentWindow.document.open(),g.contentWindow.document.write("<!DOCTYPE html>"),g.contentWindow.document.write("<html>"),g.contentWindow.document.write("<head></head>"),g.contentWindow.document.write("<body></body>"),g.contentWindow.document.write("</html>"),g.contentWindow.document.body.appendChild(d()),g.contentWindow.document.close()}(document,window.kayako||{});</script>
+
+
+</body>
+ </html>

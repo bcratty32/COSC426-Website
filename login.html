@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+<style>
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100);
+
+body {
+  background: url(https://dl.dropboxusercontent.com/u/23299152/Wallpapers/wallpaper-22705.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;
+}
+
+.login-card {
+  padding: 40px;
+  width: 274px;
+  background-color: #F7F7F7;
+  margin: 0 auto 10px;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.login-card h1 {
+  font-weight: 100;
+  text-align: center;
+  font-size: 2.3em;
+}
+
+.login-card input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.login-card input[type=text], input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.login-card input[type=text]:hover, input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.login {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+/* border-radius: 3px; */
+/* -webkit-user-select: none;
+  user-select: none; */
+}
+
+.login-submit {
+  /* border: 1px solid #3079ed; */
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1); 
+  background-color: #4d90fe;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.login-submit:hover {
+  /* border: 1px solid #2f5bb7; */
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #357ae8;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.login-card a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;
+}
+
+.login-card a:hover {
+  opacity: 1;
+}
+
+.login-help {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
+
+</style>
+
+
+<!--<script>
+
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var user=getCookie("username");
+    if (user != "") 
+    {
+      window.location.href = "../index.html";
+    }
+    else 
+    {
+      //this is where I need them to the login page be viewed and take infor from here
+       user = prompt("Please enter your name:","");
+       document.write(
+        "<div class='login-card' id='loginForm'>"
+          "<h1>Log-in</h1>"
+          "<br>"
+          "<form>"
+            "<input type='text' name='user' id='schoolEmail' placeholder='Email'>"
+            "<input type='password' name='pass' placeholder='Password'>"
+            "<input type='submit' name='login' class='login login-submit' value='login' onclick='return correctEmail()''>"
+          "</form>"
+          "<div class='login-help'>"
+            "<a href='../register.html'>Register</a>" 
+          "</div>"
+        "</div>"
+);
+       if (user != "" && user != null)
+        {
+          var checkEmail = document.getElementById("schoolEmail").value;
+          if(checkEmail.endsWith("@gulls.salisbury.edu") == true)
+          {
+            setCookie("username", user, 45);
+
+          }
+          else
+          {
+            prompt("Try again. Invalid Username");
+          }
+        }
+}
+
+</script>-->
+</head>
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>Log-in</title>
+  
+  
+  <link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<!--<body onload="checkCookie()">-->
+<body>
+<div class="login-card" id="loginForm">
+    <h1>Log-in</h1><br>
+  <form>
+    <input type="text" name="user" id="schoolEmail" placeholder="Email">
+    <input type="password" name="pass" placeholder="Password">
+    <input type="submit" name="login" class="login login-submit" value="login" onclick="correctEmail()">
+  </form>
+  <div class="login-help">
+    <a href="../register.html">Register</a> 
+  </div>
+</div>
+
+
+<script>
+  function correctEmail()
+  {
+    var emailString = document.getElementById("schoolEmail").value;
+    //var emailCredentialSubstring = "@gulls.salisbury.edu"
+    var emailFlag = emailString.endsWith("@gulls.salisbury.edu");
+    if(emailFlag == true){
+      window.alert("right");
+       //window.redirect.href = "../index.html";
+       window.location.assign("https://studyswapwebsite.firebaseapp.com/index.html")
+       window.redirect.href = "https://studyswapwebsite.firebaseapp.com/index.html";
+       window.redirect.href = "https://studyswapwebsite.firebaseapp.com/index.html";
+
+    }
+    else{
+      window.alert("wrong");
+      console.log("wrong");
+      //window.redirect.href = "../login.html";
+    }
+  }
+</script>
+
+
+<!-- <div id="error"><img src="https://dl.dropboxusercontent.com/u/23299152/Delete-icon.png" /> Your caps-lock is on.</div> -->
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+
+  
+</body>
+</html>

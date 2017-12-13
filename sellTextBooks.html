@@ -1,0 +1,293 @@
+<!--this is where we should use firebase connection-->
+<!--<?php
+//session_start();
+?>-->
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.0.2/firebase.js">
+  </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+    <script>
+
+  // Initialize Firebase
+ /* var config = {
+    apiKey: "AIzaSyAKAvtSqE25LzqCWv4PzPlHuC9a-UadF7U",
+    authDomain: "studyswapwebsite.firebaseapp.com",
+    databaseURL: "https://studyswapwebsite.firebaseio.com",
+    projectId: "studyswapwebsite",
+    storageBucket: "studyswapwebsite.appspot.com",
+    messagingSenderId: "271728404472"
+  };
+  firebase.initializeApp(config);
+   var database = firebase.database();
+
+      var bigOne = document.getElementById('bigOne');
+      var dbRef = firebase.database().ref().child('text');
+      dbRef.on('value', function(snap) { return bigOne.innerText = snap.val();})
+
+  //var ref = new firebase('https://studyswapwebsite.firebaseio.com');
+  //var ref = firebase.databsase.ref();
+  var bookref = firebase.databsase().ref().child('studyswapwebsite');
+  $('#submitSellBook').click(function(){
+    bookref.set({
+
+    id: $("isbn").val()+Date.now(),
+    isbn: $("#isbn").val(),
+    title: $("#title").val(),
+    author: $("#author").val(),
+    price:  $("#price").val(),
+    edition: $("#edition").val(),
+    year: $("#year").val(),
+    condition: $("condition").val()
+
+    });
+
+  });
+  //console.log(bookref);*/
+</script>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../favicon.ico">
+
+        <title>Sell a Book</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <!--<link href="signin.css" rel="stylesheet">-->
+
+        <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+        <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+        <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <!-- Custom styles for this template -->
+        <link href="../css/contactus.css" rel="stylesheet">
+        <link href="../css/carousel.css" rel="stylesheet">
+        <link href="../css/sellTextBooks.css" rel="stylesheet">
+  </head>
+  <body>
+<!-- NAVBAR -->
+    <div class="navbar-wrapper">
+      <div class="container">
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Student Book Marketplace</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+
+
+
+
+                <li><a href="/web/swapChat.html">SwapChat</a></li>
+
+
+
+
+                <li><a href="buyTextBooks.html">Buy Textbooks</a></li>
+                <li class="active"><a href="sellTextBooks.html">Sell Textbooks</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
+                <li><a href="contactUs.html">Contact Us</a></li>
+                <li><a href="safety.html">Safety Precautions</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                 <!-- <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
+                  { 
+                    //echo '<li><a href="logout.html"> Log out </a></li>';
+                  ?>-->
+                  <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle"> 
+                          <?php echo $_SESSION['username'] ?> 
+                          <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="editUserInfo.html">Edit Information</a></li>
+                            <li><a href="viewSellingBooks.html">Books You're Selling</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="logout.html"> Logout </a></li>
+                  <!--<?php
+                  }
+                  else
+                  {
+                    echo '<li><a href="signIn.html"> Login </a></li>';
+                  }
+                  ?> -->     
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- END OF NAVBAR -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+            <!--<form class="form-signin" method="post" action="sellTextBooksScript.html">-->
+           <form action="" class="form">
+                <div class="searchSellWrap">
+                    <h1>
+                        <center>Sell Your Textbooks!</center>
+                    </h1>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                          <label for="title">Title:</label>
+                          <input type="text" class="form-control" id="title" name="title" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="author">Author:</label>
+                          <input type="text" class="form-control" id="author" name="author" required>
+                        </div>
+                          <div class="form-group">
+                          <label for="price">Price:</label>
+                          <input type="text" class="form-control" id="price" name="price" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                          <label for="year">Year:</label>
+                          <input type="text" class="form-control" id="year" name="year" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="edition">Edition:</label>
+                          <input type="text" class="form-control" id="edition" name="edition" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                          <label for="isbn">ISBN:</label>
+                          <input type="text" class="form-control" id="isbn" name="isbn" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="condition">Condition:</label>
+                          <input type="text" class="form-control" id="condition" name="condition" required>
+                        </div>
+                    </div>
+                </div>
+                
+
+              <div>
+                <button class="submit btn btn-lg btn-primary btn-block" type="submit">Save</button>
+             <!-- <button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>-->
+            </div>
+
+              </form>
+            </div>
+
+        </div>
+    </div>
+ <!--ORIGINAL SPOT HAD BODY ELEMENT HEAR  </body>-->
+<script>
+
+  
+
+  //var ref = new firebase('https://studyswapwebsite.firebaseio.com');
+  //var ref = firebase.databsase.ref();
+  /*var bookref = firebase.databsase().ref().child('studyswapwebsite');
+  $('#submitSellBook').click(function(){
+    bookref.set({
+
+    id: $("isbn").val()+Date.now(),
+    isbn: $("#isbn").val(),
+    title: $("#title").val(),
+    author: $("#author").val(),
+    price:  $("#price").val(),
+    edition: $("#edition").val(),
+    year: $("#year").val(),
+    condition: $("condition").val()
+
+    });
+
+  });
+  //console.log(bookref);*/
+</script>
+<script>
+  /*const handleFormSubmit = event =>{
+    event.preventDefault();
+
+    cont data = {};
+
+    const dataContainer = document.getElementByClassName('results__display')[0];
+
+    dataContainer.textContent = JSON.stringify(data, null, "    ");
+
+  };
+
+  const form = document.getElementsByClassName('form-singin')[0];
+  form.addEventListener('submit', handleFormSubmit);*/
+</script>
+<script src="https://www.gstatic.com/firebasejs/3.0.2/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+    <script>
+   $.fn.getFormData = function() {
+      var fields1 = this.find('[name]');
+      var result = {};
+      $.each(fields1, function (i, el)
+       {
+        result[el.name] = el.value;
+      });
+      return result;
+    };
+      var config = {
+    apiKey: "AIzaSyAKAvtSqE25LzqCWv4PzPlHuC9a-UadF7U",
+    authDomain: "studyswapwebsite.firebaseapp.com",
+    databaseURL: "https://studyswapwebsite.firebaseio.com",
+    projectId: "studyswapwebsite",
+    storageBucket: "studyswapwebsite.appspot.com",
+    messagingSenderId: "271728404472"
+  };
+      var fb = firebase.initializeApp(config);
+      var user_id;
+      $('.submit').on('click', function (e) {
+        e.preventDefault();
+        var updates = {};
+        user_id = user_id ? user_id : fb.database().ref().child('books').push().key;
+        updates[user_id] = $('form').getFormData();
+        fb.database().ref().child('books').update(updates);
+      });
+</script>
+
+</body>
+
+
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <!--<script src="../../assets/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+ </html>
